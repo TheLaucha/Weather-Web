@@ -27,15 +27,43 @@ btnBuscar.addEventListener('click', (e) =>{
             })
             .catch(error => console.log(error)); // --> Mostrar error en pantalla
     }
-
 });
 
-/* 
-console.log(
-    obtenerClima('Buenos Aires')
-        .then( respuesta => {
-            console.log(respuesta);
-            mostrarResultado(respuesta);
-        })
-);
-*/
+// Cambiar tipo de grados al hacer click
+const section_grados = document.querySelectorAll('.section-grados');
+const tipo = document.querySelector('.tipo');
+const grados = document.querySelectorAll('.grados');
+
+section_grados.forEach( el =>{
+    el.addEventListener('click', () =>{
+        if (tipo.textContent === '°C'){
+
+            grados.forEach( grado =>{
+                let fahrenheit = formulaF(grado.textContent);
+                grado.textContent = fahrenheit;
+                document.querySelectorAll('.tipo').forEach(tipo =>{
+                    tipo.textContent = '°F';
+                })
+            })
+
+        } else{
+            grados.forEach(grado =>{
+                let celcius = formulaC(grado.textContent);
+                grado.textContent = celcius;
+                document.querySelectorAll('.tipo').forEach(tipo =>{
+                    tipo.textContent = '°C';
+                })
+            })
+        }
+    })
+})
+
+function formulaF(grado){
+    let fahrenheit = (grado * 9/5) + 32;
+    return fahrenheit;
+}
+
+function formulaC(grado){
+    let celcius = ((grado - 32) * 5/9).toFixed(1);
+    return celcius;
+}

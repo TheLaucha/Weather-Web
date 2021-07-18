@@ -117,3 +117,11 @@ body{
     margin: 5px 0px;
 }
 
+.resultado .dia .section-grados{
+    display: flex;
+    justify-content: center;
+}
+
+.space{
+    margin: 0px 5px;
+}
