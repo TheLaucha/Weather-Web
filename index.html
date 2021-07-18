@@ -5,8 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <div class="container">
+        <form action="POST" id="formulario">
+            <input type="text" id="city" placeholder="Buenos Aires">
+            <button type="submit" id="buscar"> Buscar </button>
+        </form>
+        <div class="pronostico">
+            <h1>Aca se muestra el pronostico de 3 dias</h1>
+            <div class="resultado">
+                <div class="dia" id="dia-1">
+                    <h2>Dia 1</h2>
+                    <div class="image">
+
+                    </div>
+                    <p class="temperatura">
+
+                    </p>
+                    <p class="detalles">
+                        
+                    </p>
+                </div>
+                <div class="dia" id="dia-2">
+                    <h2 id="dia-2">Dia 2</h2>
+                    <div class="image">
+
+                    </div>
+                    <p class="temperatura">
+
+                    </p>
+                    <p class="detalles">
+                        
+                    </p>
+                </div>
+                <div class="dia" id="dia-3">
+                    <h2 id="dia-3">Dia 3</h2>
+                    <div class="image">
+
+                    </div>
+                    <p class="temperatura">
+
+                    </p>
+                    <p class="detalles">
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/index.js" type="module"></script>
+
 </body>
 </html>

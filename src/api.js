@@ -1,5 +1,3 @@
-
-
 // Obtener Clima
 
 export async function obtenerClima(lugar){
@@ -12,7 +10,3 @@ export async function obtenerClima(lugar){
     // Retorno el clima
     return clima;
 }
-
-// Prueba
-
-export const hola = "hola mundo";
