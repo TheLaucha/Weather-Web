@@ -18,7 +18,6 @@ export function mostrarResultado(clima){
     const $grados_3_min = document.querySelector('#grados_3_max');
     const $region_3 = document.querySelector('#region_3');
 
-    console.log(clima)
     // Creo el HTML Dia 1
     $h2_1.textContent = clima.location.localtime;
     $icon_1.src = clima.current.condition.icon;

@@ -22,7 +22,6 @@ btnBuscar.addEventListener('click', (e) =>{
     } else{
         obtenerClima(city)
             .then( respuesta =>{
-                console.log(respuesta);
                 mostrarResultado(respuesta);
             })
             .catch(error => console.log(error)); // --> Mostrar error en pantalla
