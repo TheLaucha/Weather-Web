@@ -51,6 +51,7 @@ table {
 /* ---- MIS ESTILOS ---- */
 
 :root{
+    --black : #1B1A17;
     --white: #E8F6EF;
     --yellow: #FFE194;
     --blue : #4C4C6D;
@@ -71,12 +72,20 @@ body{
     flex-direction: column;
 }
 
+/* FORMULARIO */
+
 #formulario #city{
     border: none;
     outline: none;
     margin: 20px 0px;
     padding: 10px 20px;
     font-family: 'Encode Sans SC', sans-serif;
+    font-size: 1.0em;
+    font-weight: 500;
+    border-radius: 3px;
+    color: var(--black);
+    background-color: var(--yellow);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.452);
 }
 
 #formulario #buscar{
@@ -84,7 +93,21 @@ body{
     padding: 10px 20px;
     margin: 20px 0px;
     font-family: 'Encode Sans SC', sans-serif;
+    font-size: 1.0em;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: all 0.2s;
+    color: var(--black);
+    background-color: var(--yellow);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.452);
 }
+
+#formulario #buscar:hover{
+    cursor: pointer;
+    background-color: var(--lightblue);
+}
+
+/* PRONOSTICO */
 
 .pronostico{
     width: 100%;
@@ -94,15 +117,18 @@ body{
     padding: 20px;
 }
 
-.pronostico h1{
+.pronostico #pronostico-title{
     font-size: 2em;
+    font-weight: 600;
+    color: var(--black);
 }
 
 .resultado{
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 40% 25% 25%;
     gap: 2%;
     padding: 20px;
+    justify-content: center;
 }
 
 .resultado .dia{
@@ -110,6 +136,7 @@ body{
     border-radius: 3px;
     padding: 20px;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0.267);
 }
 
 .resultado .dia h2{
@@ -117,11 +144,39 @@ body{
     margin: 5px 0px;
 }
 
+.resultado .dia img{
+    width: 100%;
+    max-width: 100px;
+}
+
 .resultado .dia .section-grados{
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
+}
+
+.resultado .dia .section-grados .grados,.resultado .dia .section-grados .tipo{
+    font-size: 1.5em;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .space{
     margin: 0px 5px;
 }
+
+#aviso{
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+.error{
+    text-align: center;
+    transition: all 0.2s;
+    border-radius: 3px;
+    background-color: brown;
+    color: var(--white);
+    width: 100%;
+    padding: 20px;
+}
+

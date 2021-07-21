@@ -38,3 +38,27 @@ export function mostrarResultado(clima){
     $grados_3_max.textContent = clima.forecast.forecastday[2].day.maxtemp_c;
     $region_3.textContent = `${clima.location.name} - ${clima.location.region} - ${clima.location.country}`;
 }
+
+// Mostrar mensaje de error
+const divMensaje = document.querySelector('.mensaje');
+
+export function mostrarMensaje(clase,mensaje){
+    if(document.querySelector('.mensajeError')){
+        document.querySelector('.mensajeError').remove();
+    }
+
+    // Creo parrafo de mensaje
+    const div = document.createElement('div');
+    div.classList.add('mensajeError');
+    div.innerHTML = mensaje;
+
+    // Lo agrego al DOM con setTimeOut
+    divMensaje.appendChild(div);
+    divMensaje.classList.add(clase);
+
+    // Lo elimino en unos segundos
+    setTimeout( () =>{
+        div.remove();
+        divMensaje.classList.remove(clase);
+    },2000);
+}

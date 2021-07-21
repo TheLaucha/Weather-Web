@@ -1,5 +1,5 @@
 import { obtenerClima } from "./api.js";
-import { mostrarResultado } from "./ui.js";
+import { mostrarResultado, mostrarMensaje } from "./ui.js";
 import { obtenerPosicion } from "./script_position.js";
 
 //OBTENER POSICION
@@ -10,6 +10,7 @@ window.addEventListener('load', obtenerPosicion);
 
 const btnBuscar = document.querySelector('#buscar');
 
+
 btnBuscar.addEventListener('click', (e) =>{
     e.preventDefault();
 
@@ -18,7 +19,7 @@ btnBuscar.addEventListener('click', (e) =>{
 
     // Evalue si el valor es correcto
     if (city === ''){
-        console.log('Mostrar Error')
+        mostrarMensaje('error','Debes ingresar un pais, ciudad o localidad para buscar');
     } else{
         obtenerClima(city)
             .then( respuesta =>{
